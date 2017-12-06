@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { User } from '../_models/index';
 
 @Injectable()
 export class AuthenticationService extends BaseService {
@@ -36,7 +35,7 @@ export class AuthenticationService extends BaseService {
         if (message && message.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('access_token', JSON.stringify(message.token));
-          localStorage.setItem("authorization_info", JSON.stringify({ userName: message.userName, userId: message.userId }));
+          localStorage.setItem('authorization_info', JSON.stringify({ userName: message.userName, userId: message.userId }));
           return true;
         }
 
@@ -50,12 +49,12 @@ export class AuthenticationService extends BaseService {
     localStorage.removeItem('authorization_info');
   }
 
-  get CurrentUser(): User {
-    return JSON.parse(localStorage.getItem("authorization_info")) as User;
+  get CurrentUser() {
+    return JSON.parse(localStorage.getItem('authorization_info'));
   }
 
   get IsAuthenticated() {
-    return localStorage.getItem("access_token") !== null;
+    return localStorage.getItem('access_token') !== null;
   }
 
 }

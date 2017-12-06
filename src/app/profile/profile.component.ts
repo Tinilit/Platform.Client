@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../_services/index';
 import decode from 'jwt-decode';
-import { Roles } from '../_models/index';
 
 @Component({
   selector: 'app-profile',

@@ -40,7 +40,7 @@ import { AuthGuard, RolesGuard } from './_guards/index';
 import { DeleteDialogComponent } from './_directives/dialogs/index';
 
 // services
-import { AuthenticationService, ProfileService, UsersService } from './_services/index';
+import { AuthenticationService, ProfileService } from './_services/index';
 
 // pages
 import { PublicComponent, PrivateComponent } from './_layouts/index';
@@ -101,8 +101,7 @@ import { ProfileComponent, InfoComponent } from './profile/index';
   providers: [
     AuthGuard,
     AuthenticationService,
-    ProfileService,
-    UsersService
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })
